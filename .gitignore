@@ -1,0 +1,95 @@
+# --------------------------------------
+# Python
+# --------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment files
+.env
+.env.*
+
+# Package & Build
+.Python
+build/
+dist/
+downloads/
+*.egg-info/
+.eggs/
+*.egg
+lib/
+lib64/
+sdist/
+develop-eggs/
+.installed.cfg
+
+# Logs
+*.log
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Mypy / LSP / Dask
+.mypy_cache/
+.pyrightcache/
+.cache/
+.dask-worker-space/
+
+# Qdrant local vector store
+qdrant_storage/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Data & Model files
+*.npy
+*.pkl
+*.pt
+*.ckpt
+*.tmp
+*.bak
+
+# --------------------------------------
+# Docker
+# --------------------------------------
+*.tar
+*.img
+*.container
+*.pid
+*.pid.lock
+*.sock
+
+# Docker volumes and system files
+**/docker-compose.override.yml
+docker-compose.override.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
+docker-compose.test.yml
+docker-compose.local.yml
+
+# Ignore Docker build context cache
+.docker/
+
+# Optional: ignore any mounted data
+volumes/
+data/
