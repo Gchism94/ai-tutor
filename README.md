@@ -1,4 +1,4 @@
-# 🧠 AI Tutor (DEVELOPMENTAL soon to be JupyterQuest+)
+# 🧠 AI Tutor (DEVELOPMENTAL soon to be CortexAI)
 
 An open-source AI-powered tutor built to support student learning through adaptive quizzes, coding help, and ethical guidance.
 
@@ -7,7 +7,7 @@ An open-source AI-powered tutor built to support student learning through adapti
 >The current version is in the process of being consolidated into [jupyterquest](https://github.com/Gchism94/jupyterquest).  
 > Contributions, feedback, and testing are welcome!
 
-**JupyterQuest+** is designed to be embedded in data science courses as a virtual TA. It uses large language models (LLMs) to answer coding questions, generate personalized quizzes, and flag ethically sensitive responses—all while helping instructors keep tabs on student engagement and integrity.
+**CortexAI+** is designed to be embedded in data science courses as a virtual TA. It uses large language models (LLMs) to answer coding questions, generate personalized quizzes, and flag ethically sensitive responses—all while helping instructors keep tabs on student engagement and integrity.
 
 ---
 
@@ -57,15 +57,15 @@ ai-teaching-assistant/
 │
 ├── .streamlit/                  # Streamlit config (e.g., secrets.toml)
 ├── assignments/                 # Uploaded assignments (you might want to .gitignore this)
-├── chroma_db/                  # Vector DB (likely should be ignored or mounted)
-├── course_materials/           # Source documents for retrieval
+├── chroma_db/                   # Vector DB (likely should be ignored or mounted)
+├── course_materials/            # Source documents for retrieval
 │
 ├── src/                         # Source code
 │   ├── app.py                   # Entry point (rename best version to app.py)
 │   ├── ingest.py                # Document ingestion logic
 │   ├── add_documents.py         # (could be merged with ingest.py if similar)
 │   ├── utils/                   # Helper modules (if needed)
-│   ├── ethics/                 # Ethics-related logging & logic
+│   ├── ethics/                  # Ethics-related logging & logic
 │   │   └── ethics_log.txt       # (move this or convert to CSV/JSON/log format)
 │   └── logs/
 │       └── chat_log.txt
@@ -85,7 +85,7 @@ ai-teaching-assistant/
 ├── .env                         # .gitignored
 ├── README.md
 ├── requirements.txt
-└── LICENSE                      # Add one if open-source
+└── LICENSE                      # MIT License
 ```
 
 ---

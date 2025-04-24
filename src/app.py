@@ -30,9 +30,9 @@ if not OPENAI_API_KEY:
     st.stop()
 
 # --- Logging ---
-logging.basicConfig(filename="chat_log.txt", level=logging.INFO, format="%(asctime)s %(message)s")
+logging.basicConfig(filename="src/logs/chat_log.txt", level=logging.INFO, format="%(asctime)s %(message)s")
 ethics_logger = logging.getLogger("ethics")
-ethics_handler = logging.FileHandler("ethics_log.txt")
+ethics_handler = logging.FileHandler("src/logs/ethics_log.txt")
 ethics_handler.setFormatter(logging.Formatter("%(asctime)s - %(message)s"))
 ethics_logger.setLevel(logging.INFO)
 ethics_logger.addHandler(ethics_handler)
@@ -158,7 +158,6 @@ display_name = st.session_state["display_name"]
 is_admin = user_identifier in ADMIN_USERS
 
 
-# --- Display name preference ---
 # --- Display name preference ---
 if "display_name" not in st.session_state:
     with st.expander("🔒 Optional: Customize Display Name", expanded=False):

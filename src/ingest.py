@@ -42,9 +42,9 @@ qdrant_store = QdrantVectorStore(
 
 # --- Load processed sources ---
 def load_logged_sources():
-    if not os.path.exists("embedded_sources.csv"):
+    if not os.path.exists("data/embedded_sources.csv"):
         return set()
-    with open("embedded_sources.csv", newline="") as f:
+    with open("data/embedded_sources.csv", newline="") as f:
         return set(row[0] for row in csv.reader(f) if row)
 
 logged_sources = load_logged_sources()
@@ -146,7 +146,7 @@ def ingest(batch_size=10):
         qdrant_store.add_documents(batch)
         time.sleep(2)
 
-    with open("embedded_sources.csv", "a", newline="") as f:
+    with open("data/embedded_sources.csv", "a", newline="") as f:
         writer = csv.writer(f)
         for source in sources_to_add:
             writer.writerow([source])

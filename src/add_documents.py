@@ -173,16 +173,16 @@ def ingest(batch_size=10):
         qdrant_store.add_documents(batch)
         time.sleep(2)
 
-    with open("embedded_sources.csv", "a", newline="") as f:
+    with open("data/embedded_sources.csv", "a", newline="") as f:
         writer = csv.writer(f)
         for source in sources_to_add:
             writer.writerow([source])
 
-    deduplicate_csv("embedded_sources.csv")
+    deduplicate_csv("data/embedded_sources.csv")
     print("✅ Embedding complete.")
 
 # --- Deduplicate CSV ---
-def deduplicate_csv(path="embedded_sources.csv"):
+def deduplicate_csv(path="data/embedded_sources.csv"):
     if not os.path.exists(path):
         return
     with open(path, newline="") as f:
