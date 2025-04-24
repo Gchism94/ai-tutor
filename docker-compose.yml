@@ -10,7 +10,7 @@ services:
   ai-agent-ta:
     build:
       context: .
-      dockerfile: Dockerfile-no-ollama
+      dockerfile: docker/Dockerfile-no-ollama
     depends_on:
       - qdrant
     ports:
@@ -21,9 +21,11 @@ services:
       - .env
     environment:
       QDRANT_CLUSTER_URL: http://qdrant:6333
-      OLLAMA_BASE_URL: http://host.docker.internal:11434  # ← access Ollama from host
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
     stdin_open: true
     tty: true
+    working_dir: /app
+    command: streamlit run src/app.py
 
 volumes:
   qdrant-data:

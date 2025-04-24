@@ -50,7 +50,7 @@ def send_slack_alert(user_identifier, flagged_text):
 def ethics_warning(text, user_identifier="unknown", display_name=None):
     text = text.lower()
     red_flags = [
-        r"can you (solve|answer|do) .* (assignment|exam|test|quiz)",
+        r"can you (solve|answer|do) .* (assignment|exam|test|quiz|problem)",
         r"what is the answer to .*",
         r"give me the solution to .*",
         r"complete this for me",

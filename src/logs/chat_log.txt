@@ -70,3 +70,87 @@ Reference(s):
 - [Regularization](https://scikit-learn.org/stable/glossary.html#term-regularization) - Scikit-Learn Regularization Glossary Entry
 
 2025-04-08 05:48:34,144 🌙 LATE-NIGHT USAGE: gchism94 (gchism94) used the app at 2025-04-08T05:48:34.144037
+2025-04-24 18:29:15,445 HTTP Request: GET https://cad524b9-6bc4-469a-8a46-c2cd263aec4e.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-04-24 18:29:16,012 HTTP Request: GET https://cad524b9-6bc4-469a-8a46-c2cd263aec4e.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-04-24 18:31:10,285 HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-04-24 18:31:11,130 HTTP Request: POST https://cad524b9-6bc4-469a-8a46-c2cd263aec4e.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ai_ta_sources/points/search "HTTP/1.1 200 OK"
+2025-04-24 18:31:49,966 USER: gchism94
+QUESTION: Explain MSE in context towards ML
+ANSWER:  Mean Squared Error (MSE) is a common metric used in Machine Learning, particularly in regression problems. It measures the average squared difference between the predicted values and the actual values in the dataset. The formula for computing MSE is given as:
+
+```python
+MSE = 1/n * sum((y_i - f(x_i))^2)
+```
+
+where `n` is the number of observations, `y_i` are the actual values, and `f(x_i)` are the predicted values. The MSE will be small if the predicted responses are very close to the true responses, and large otherwise.
+
+However, it's important to note that the MSE computed using the training data is called the Training Mean Squared Error (Training MSE), not just Mean Squared Error. To evaluate the performance of a model on unseen data, other metrics like Root Mean Squared Error (RMSE) or Mean Absolute Error (MAE) can be used as well.
+
+The reason we are interested in how well a method performs on previously unseen test data is that we want our models to generalize well to new observations, not just fit the training data perfectly. This is crucial for practical applications, as overfitting the training data may result in poor performance on new data.
+
+2025-04-24 18:49:22,224 HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-04-24 18:49:23,168 HTTP Request: POST https://cad524b9-6bc4-469a-8a46-c2cd263aec4e.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ai_ta_sources/points/search "HTTP/1.1 200 OK"
+2025-04-24 18:50:13,607 USER: gchism94
+QUESTION: Solve these problems:
+# Task 1: Compute the mean of a list of numbers.
+def compute_mean(numbers):
+    """
+    Computes the mean of a list of numbers.
+
+    Parameters:
+    numbers (list): A list of numerical values.
+
+    Returns:
+    float: The mean of the numbers in the list, or None if the list is empty.
+    """
+    pass  # Replace this with your implementation
+
+
+# Task 2: Compute the median of a list of numbers.
+def compute_median(numbers):
+    """
+    Computes the median of a list of numbers.
+
+    Parameters:
+    numbers (list): A list of numerical values.
+
+    Returns:
+    float: The median of the numbers in the list, or None if the list is empty.
+    """
+    pass  # Replace this with your implementation
+
+ANSWER:  For Task 1: Compute the mean of a list of numbers, you can use the following pseudocode:
+
+```python
+def compute_mean(numbers):
+    if len(numbers) == 0:
+        return None  # Return None if the list is empty
+
+    total = 0  # Initialize the total sum to zero
+    for num in numbers:
+        total += num  # Add each number to the total sum
+
+    mean = total / len(numbers)  # Compute the average of the numbers by dividing the total sum by the number of elements
+    return mean
+```
+
+For Task 2: Compute the median of a list of numbers, you can use the following pseudocode:
+
+```python
+def compute_median(numbers):
+    if len(numbers) == 0:
+        return None  # Return None if the list is empty
+
+    sorted_numbers = sorted(numbers)  # Sort the numbers in ascending order
+    n = len(sorted_numbers)  # Get the number of elements in the sorted list
+
+    midpoint = math.floor((n + 1) / 2)  # Calculate the index of the middle element (or the average of the two middle elements if the list has an odd number of elements)
+
+    if n % 2 == 0:  # If the list has an even number of elements, the median is the average of the two middle elements
+        return (sorted_numbers[midpoint - 1] + sorted_numbers[midpoint]) / 2
+    else:  # If the list has an odd number of elements, the median is the value at the calculated midpoint index
+        return sorted_numbers[midpoint]
+```
+
+Remember to import necessary libraries like `math`. You can find more details in the Python documentation: https://docs.python.org/3/library/functions.html#math-module
+
