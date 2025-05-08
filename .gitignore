@@ -93,3 +93,7 @@ docker-compose.local.yml
 # Optional: ignore any mounted data
 volumes/
 data/
+
+# Slack
+slack/*
+slack_exports/*
